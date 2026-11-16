@@ -2,6 +2,9 @@
 
 Notebook para a competição [Titanic - Machine Learning from Disaster](https://www.kaggle.com/competitions/titanic) do Kaggle.
 
+- Notebook no Kaggle: https://www.kaggle.com/code/brenoborgesss/titanic-atributos-e-validacao-cruzada
+- Placar público: **0,7799** (versão 3)
+
 ## O que o notebook faz
 
 1. **Análise exploratória:** taxa de sobrevivência por sexo, classe e faixa de idade, e mapa dos valores ausentes.
@@ -23,7 +26,9 @@ Notebook para a competição [Titanic - Machine Learning from Disaster](https://
 | Versão | Abordagem | Validação cruzada | Placar público do Kaggle |
 |---|---|---|---|
 | 2 | 14 atributos (incluindo deck e grupos de bilhete) + Gradient Boosting | 0,841 | 0,744 |
-| 3 | 9 atributos + ensemble regularizado (LR + SVM + RF) | ver notebook | ver placar |
+| 3 | 9 atributos + ensemble regularizado (LR + SVM + RF) | 0,835 | **0,780** |
+
+Para comparação, o baseline "todas as mulheres sobrevivem" tem 0,787 na validação cruzada e cerca de 0,766 no placar.
 
 A versão 2 teve ótima validação cruzada e placar abaixo do baseline por sexo: overfitting causado por atributos muito específicos em um dataset de 891 linhas. A versão 3 simplifica os atributos e combina modelos de famílias diferentes para reduzir a variância.
 
