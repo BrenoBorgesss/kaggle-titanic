@@ -27,6 +27,6 @@ pip install pandas scikit-learn matplotlib jupyter
 jupyter notebook titanic.ipynb
 ```
 
-No Kaggle, o notebook lê os dados direto de `/kaggle/input/titanic`.
+No Kaggle, o notebook encontra os dados da competição em `/kaggle/input`.
 
 `make_notebook.py` gera o `titanic.ipynb` a partir do código.

@@ -17,6 +17,7 @@ Etapas:
 3. Comparação de modelos com validação cruzada estratificada (5 folds)
 4. Treino do melhor modelo e geração do arquivo de submissão"""),
     code("""import os
+import glob
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -30,7 +31,9 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
 
 SEED = 42
-DATA_DIR = '/kaggle/input/titanic' if os.path.exists('/kaggle/input/titanic') else 'data'
+# No Kaggle os dados da competição ficam em /kaggle/input; localmente, em data/
+encontrados = glob.glob('/kaggle/input/**/train.csv', recursive=True)
+DATA_DIR = os.path.dirname(encontrados[0]) if encontrados else 'data'
 train = pd.read_csv(f'{DATA_DIR}/train.csv')
 test = pd.read_csv(f'{DATA_DIR}/test.csv')
 print(train.shape, test.shape)
